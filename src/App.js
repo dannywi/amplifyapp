@@ -51,8 +51,11 @@ function App() {
 
   useEffect(() => { runCoco() }, []);
 
-  const width = 640 / 2;
-  const height = 480 / 2;
+  // keep landscape ratio
+  var width = window.innerWidth * 0.9;
+  var height = window.innerHeight * 0.9;
+  width = Math.min(width, height / 0.75);
+  height = Math.min(height, width * 0.75);
 
   return (
     <div className="App">
